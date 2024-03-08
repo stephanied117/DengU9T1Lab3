@@ -50,35 +50,50 @@ public class VehicleRunner {
         // ----- instructions in lab sheet -------
         System.out.println("--- Testing method on a Car object ---");
         Car testCar1 = new Car("KXN73F", 8.50, 5, true);
-        System.out.println(testCar1.getPassengers());
+        testCar1.applyDiscount();
+        System.out.println(testCar1.isDiscountApplied());
+        System.out.println(testCar1.getTollFee());
         System.out.println("-----------");
-        boolean success = testCar1.dropOffPassengers(3);
-        System.out.println(success);
-        System.out.println(testCar1.getPassengers());
+        testCar1.applyDiscount(); // try applying again
+        System.out.println(testCar1.isDiscountApplied());
+        System.out.println(testCar1.getTollFee());
+        System.out.println("--- Testing method on Taxi objects ---");
+        Taxi testTaxi1 = new Taxi("JMD645", 10.0, 3, false, 5.0); // not electric
+        testTaxi1.applyDiscount();
+        System.out.println(testTaxi1.isDiscountApplied());
+        System.out.println(testTaxi1.getTollFee());
         System.out.println("-----------");
-        success = testCar1.dropOffPassengers(3);
-        System.out.println(success);
-        System.out.println(testCar1.getPassengers());
-        System.out.println("--- Testing method on a Taxi object ---");
-        Taxi testTaxi1 = new Taxi("JMD645", 10.35, 3, false, 5.0);
-        System.out.println(testTaxi1.getPassengers());
-        System.out.println("-----------");
-        success = testTaxi1.dropOffPassengers(3);
-        System.out.println(success);
-        System.out.println(testTaxi1.getPassengers());
-        System.out.println("-----------");
-        success = testTaxi1.dropOffPassengers(2);
-        System.out.println(success);
-        System.out.println(testTaxi1.getPassengers());
+        Taxi testTaxi2 = new Taxi("ABC645", 12.0, 3, true, 5.0);
+        testTaxi2.applyDiscount();
+        System.out.println(testTaxi2.isDiscountApplied());
+        System.out.println(testTaxi2.getTollFee());
         System.out.println("-----------");
 
-        Car car2 = new Car("DHF6FH", 7.11, 4,true);
-        Taxi taxi2 = new Taxi("WE2HJG", 5.16, 6,true, 13.00);
-        success = car2.dropOffPassengers(2);
-        System.out.println(success);
-        System.out.println(car2.getPassengers());
-        success = taxi2.dropOffPassengers(7);
-        System.out.println(success);
-        System.out.println(taxi2.getPassengers());
+        System.out.println("--- Testing method on Truck objects ---");
+        Truck testTruck1 = new Truck("7645MX", 10.50, 3, 7, true);
+        boolean validLicensePlate = testTruck1.validateLicensePlate();
+        System.out.println(validLicensePlate);
+        System.out.println("-----------");
+        Truck testTruck2 = new Truck("7645PX", 10.50, 3, 7, true);
+        validLicensePlate = testTruck2.validateLicensePlate();
+        System.out.println(validLicensePlate);
+        System.out.println("-----------");
+        Truck testTruck3 = new Truck("7645LX", 10.50, 3, 4, true);
+        validLicensePlate = testTruck3.validateLicensePlate();
+        System.out.println(validLicensePlate);
+        System.out.println("-----------");
+        Truck testTruck4 = new Truck("7645L9", 10.50, 3, 4, true);
+        validLicensePlate = testTruck4.validateLicensePlate();
+        System.out.println(validLicensePlate);
+        System.out.println("-----------");
+        Truck testTruck5 = new Truck("7645L9", 10.50, 3, 4, false);
+        validLicensePlate = testTruck5.validateLicensePlate();
+        System.out.println(validLicensePlate);
+        System.out.println("-----------");
+        Truck testTruck6 = new Truck("7645PX", 10.50, 3, 7, false);
+        validLicensePlate = testTruck6.validateLicensePlate();
+        System.out.println(validLicensePlate);
+
+
     }
 }

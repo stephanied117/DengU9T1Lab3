@@ -12,9 +12,14 @@ public class Vehicle {
     public String getLicensePlate() {
         return licensePlate;
     }
-
+    public void setLicensePlate(String newPlate) {
+        licensePlate = newPlate;
+    }
     public double getTollFee() {
         return tollFee;
+    }
+    public void setTollFee(double newPrice) {
+        tollFee = newPrice;
     }
 
     public int getPassengers() {

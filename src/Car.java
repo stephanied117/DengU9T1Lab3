@@ -22,6 +22,13 @@ public class Car extends Vehicle {
         setPassengers(getPassengers() - numOut);
         return true;
     }
+    public void applyDiscount() {
+        if (discountApplied == false && electric == true) {
+            double discount = getTollFee() / 2.0;
+            setTollFee(discount);
+            discountApplied = true;
+        }
+    }
 
     public void printCar() {
         System.out.println("License Plate: " + getLicensePlate() + "\nToll Fee: " + getTollFee() + "\nPassengers: " + getPassengers() + "\nIs Electric: " + electric);

@@ -8,7 +8,12 @@ public class Taxi extends Car {
         discountApplied = false;   // default value
     }
 
+    public void pickupRiders(int numRiders, double farePerRider) {
+        if (numRiders >= 4) {
+            setPassengers(numRiders + getPassengers());
+        }
 
+    }
     public boolean isDiscountApplied() {
         return discountApplied;
     }
